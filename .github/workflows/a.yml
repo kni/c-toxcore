@@ -57,6 +57,8 @@ jobs:
           submodules: recursive
       - name: Cross compilation
         run: .github/scripts/cmake-win${{ matrix.bits }} script
+      - name: Buld Artifact
+        run: tar czf /prefix.tgz /prefix
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
