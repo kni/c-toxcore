@@ -1,8 +1,7 @@
 name: post-submit
 
 on:
-  push:
-    branches: [master]
+  workflow_dispatch:
 
 jobs:
   build-alpine-s390x:
