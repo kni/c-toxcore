@@ -7,7 +7,8 @@ jobs:
   build-windows:
     strategy:
       matrix:
-        bits: [32, 64]
+        # bits: [32, 64]
+        bits: [64]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
