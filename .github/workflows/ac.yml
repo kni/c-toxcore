@@ -1,0 +1,17 @@
+name: Test Cross
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    strategy:
+      matrix:
+        bits: [32, 64]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Cross compilation
+        run: .github/scripts/cmake-win${{ matrix.bits }} script
